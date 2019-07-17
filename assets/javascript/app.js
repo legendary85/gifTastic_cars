@@ -11,7 +11,7 @@ $(document).ready(function() {
 
          
         //  var car = $(this).attr("car-name")
-         var queryUrl = "https://api.giphy.com/v1/gifs/search?q="+carName+"&api_key=jfcTQP4bI55TPsssWPh2sCcdB8QwCDfG&limit=10";
+         var queryUrl = "https://api.giphy.com/v1/gifs/search?q="+carName+"&api_key=jfcTQP4bI55TPsssWPh2sCcdB8QwCDfG&limit=12&rating=g";
          $.ajax({
              url:queryUrl,
              method:'GET'
