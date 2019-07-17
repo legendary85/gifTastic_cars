@@ -19,17 +19,24 @@ $(document).ready(function() {
                 console.log(queryUrl);
                 for(var i = 0; i < car.data.length; i++){
 
-                    var imageDiv = $('<div>');
+                    var imageDiv = $('<div class="col-md-4">');
                     //div that will hold the images
                     var rating = $('<div>');
                     var gifImage = $('<img>'); 
                     var stillImage;
+
+                    gifImage.addClass('newGif');
                 
-                    rating.html(car.data[i].rating);
-                    $('#images').append(rating);
+                    rating.html("Rated: " + car.data[i].rating);
+                    imageDiv.append(rating);
                     gifImage.attr('src', car.data[i].images.fixed_height_small['url']);
                     
-                    $('#images').append(gifImage);
+                    imageDiv.append(gifImage);
+                    $('#images').append(imageDiv);
+
+
+
+                    
                 }
             });
         }
@@ -46,15 +53,17 @@ $(document).ready(function() {
                 
                 $('#buttons-row').empty();
                 for(var i = 0; i < cars.length; i++){
-                    var button =$('<button>');
-                    button.addClass('car');
+                    var button =$("<button>");
+                    button.addClass("btn btn-primary btn-sm");
+                    // button.type("button")
                     button.attr("car-name");
                     button.text(cars[i]);
-                    $('#buttons-row').append(button);
+                    $("#buttons-row").append(button);
                 }
             }
             
-            $(document).on('click','.car', function(event){
+            $(document).on('click','.btn', function(event){
+                $('#images').empty();
                 var carName = event.target.innerHTML;
                 displayCarInfo(carName);
             });
