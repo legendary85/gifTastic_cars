@@ -5,8 +5,6 @@ $(document).ready(function () {
         'Dodge', 'Ford', 'GM', 'Honda', 'Mercedes-Benz']
 
 
-    //  console.log(cars[i]);
-
     //function when called will display car images
     function displayCarInfo(carName) {
 
@@ -18,31 +16,55 @@ $(document).ready(function () {
         }).then(function (car) {
             console.log(queryUrl);
 
-        //loops through the entire length of selections array
+            //loops through the entire length of selections array
             for (var i = 0; i < car.data.length; i++) {
 
-        //creates 
+                //creates new elements 
                 var imageDiv = $('<div class="col-md-4">');
                 var rating = $('<div>');
                 var gifImage = $('<img>');
 
-        //adding a class to gifImage div
+                //adding a class to gifImage div
                 gifImage.addClass('newGif');
                 //rating from car data wll pint         
-                rating.html( '<p class="rating">' + "Rating: " + car.data[i].rating + "</p>" );
+                rating.html('<p class="rating">' + "Rating: " + car.data[i].rating + "</p>");
                 imageDiv.append(rating);
-                gifImage.attr('src', car.data[i].images.fixed_height_small['url'], 'data-animate', car.data[i].images.fixed_height_small['url'], 'data-still', car.data[i].images.fixed_height_small_still['url'], 'data-state', "still");
+                gifImage.attr('src', car.data[i].images.fixed_height_small.url);
+                gifImage.attr('data-animate', car.data[i].images.fixed_height_small.url);
+                gifImage.attr('data-still', car.data[i].images.fixed_height_small_still.url);
+                gifImage.attr('data-state', "animate");
+
                 imageDiv.append(gifImage);
                 $('#images').append(imageDiv);
                 console.log(gifImage);
-
-
-
             }
         });
     }
 
 
+    //when clicked, if data-state is animate
+    //change image to still and attribute to still
+    //else change image to motionImage and attribute to animate
+
+    $(document).on('click', ".newGif", function (event) {
+        event.preventDefault();
+        var stillImage = $(this).attr('data-still');
+        var motionImage = $(this).attr('data-animate');
+
+        if ($(this).attr('data-state') === "animate") {
+            $(this).attr('src', stillImage);
+            $(this).attr('data-state', "still")
+        } else {
+            $(this).attr('src', motionImage);
+            $(this).attr('data-state', "animate");
+
+
+        }
+
+    })
+
+    //when clicked the  input value of searchCars is pushed to cars array
+    //button is rendered
     $('#search-button').on('click', function (event) {
         event.preventDefault();
         cars.push($('#searchCars').val())
@@ -50,6 +72,8 @@ $(document).ready(function () {
         renderButtons();
     })
 
+
+    //genereates each button by the length of the array.
     function renderButtons() {
 
         $('#buttons-row').empty();
@@ -63,12 +87,16 @@ $(document).ready(function () {
         }
     }
 
+    //when clicked the name of event.target is stored as variablee carName
+    //carName is sent to the displayCarInfo function
     $(document).on('click', '.btn', function (event) {
         $('#images').empty();
         var carName = event.target.innerHTML;
+
         displayCarInfo(carName);
     });
 
+    // renders buttons as the browser loads up.
     renderButtons();
 
 
