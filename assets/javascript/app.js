@@ -16,24 +16,24 @@ $(document).ready(function () {
         }).then(function (car) {
             console.log(queryUrl);
 
-            //loops through the entire length of selections array
+        //loops through the entire length of selections array
             for (var i = 0; i < car.data.length; i++) {
 
-                //creates new elements 
+        //creates new elements 
                 var imageDiv = $('<div class="col-md-4">');
                 var rating = $('<div>');
                 var gifImage = $('<img>');
 
-                //adding a class to gifImage div
+        //adding a class to gifImage div
                 gifImage.addClass('newGif');
                 //rating from car data wll pint         
-                rating.html('<p class="rating">' + "Rating: " + car.data[i].rating + "</p>");
+                rating.html( '<p class="rating">' + "Rating: " + car.data[i].rating + "</p>" );
                 imageDiv.append(rating);
                 gifImage.attr('src', car.data[i].images.fixed_height_small.url);
-                gifImage.attr('data-animate', car.data[i].images.fixed_height_small.url);
+                gifImage.attr('data-animate', car.data[i].images.fixed_height_small.url); 
                 gifImage.attr('data-still', car.data[i].images.fixed_height_small_still.url);
-                gifImage.attr('data-state', "animate");
-
+                gifImage.attr('data-state', "animate"); 
+                
                 imageDiv.append(gifImage);
                 $('#images').append(imageDiv);
                 console.log(gifImage);
@@ -42,24 +42,25 @@ $(document).ready(function () {
     }
 
 
-    //when clicked, if data-state is animate
-    //change image to still and attribute to still
-    //else change image to motionImage and attribute to animate
+        //when clicked, if data-state is animate
+        //change image to still and attribute to still
+        //else change image to motionImage and attribute to animate
 
-    $(document).on('click', ".newGif", function (event) {
+    $(document).on('click',".newGif", function(event){
         event.preventDefault();
         var stillImage = $(this).attr('data-still');
         var motionImage = $(this).attr('data-animate');
 
-        if ($(this).attr('data-state') === "animate") {
-            $(this).attr('src', stillImage);
-            $(this).attr('data-state', "still")
-        } else {
+          if($(this).attr('data-state')==="animate"){
+            $(this).attr('src', stillImage );
+            $(this).attr('data-state',"still")
+          }else
+          {
             $(this).attr('src', motionImage);
-            $(this).attr('data-state', "animate");
+            $(this).attr('data-state',"animate");
 
 
-        }
+          }
 
     })
 
@@ -92,7 +93,7 @@ $(document).ready(function () {
     $(document).on('click', '.btn', function (event) {
         $('#images').empty();
         var carName = event.target.innerHTML;
-
+        
         displayCarInfo(carName);
     });
 
