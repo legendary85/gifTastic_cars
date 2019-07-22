@@ -8,8 +8,8 @@ Kourtney McCullough
 The purpose of this assignment was to use the GIPHY API to make a dynamic web page that populates with gifs of our choice. I had to call the GIPHY API and use JavaScript and jQuery to change the HTML of my site.
 
 
-Licensing Information: READ LICENSE
-
-##Project source can be downloaded from 
+## Project source can be downloaded from 
 
 https://github.com/legendary85/gifTastic_cars
+
+**Licensing Information: READ LICENSE
