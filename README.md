@@ -12,4 +12,4 @@ The purpose of this assignment was to use the GIPHY API to make a dynamic web pa
 
 https://github.com/legendary85/gifTastic_cars
 
-**Licensing Information: READ LICENSE
+**Licensing Information: READ LICENSE**
