@@ -4,14 +4,19 @@
 }
 
 .add-color{
-    background-color:rgb(0, 0, 0);
+    background: rgb(131,58,180);
+    background: -moz-radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(5,0,10,1) 71%);
+    background: -webkit-radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(5,0,10,1) 71%);
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(5,0,10,1) 71%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#05000a",GradientType=1);
     color: yellow;
     text-transform: capitalize;
 }
 
 
+
 .jumbotron{
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-image: url("../images/car_logo.jpg");
     background-size: contain;
     color: #f7e019;
@@ -20,6 +25,7 @@
     text-transform: uppercase;
     
 }
+
 form{
     margin: 15px 0; 
     text-align: center;
@@ -37,4 +43,5 @@ img{
     margin-top: 5px; 
     height: 200px;
     width: 200px;
+    border: solid 2px gray !important;
 }
