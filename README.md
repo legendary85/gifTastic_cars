@@ -25,7 +25,7 @@ Gif of Cars is a small web application that allows users to view gif images of v
  - Dynamically display images in web application 
 
 ## Screen Shots
-![]("assets/images/screenshot.png")
+![]("https://user-images.githubusercontent.com/50154158/74267448-a9db1200-4ccb-11ea-98ab-d6fd41a1fd31.png")
 
 
 ## Project source can be downloaded from 
