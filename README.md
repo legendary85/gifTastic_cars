@@ -1,11 +1,31 @@
 # Gif of Cars
-Gif of Cars is a small web page that allows users to view gif images of various cars by selecting a button. The app also allows users to dynamically add buttons by inputing cars that are not listed, and then make a selection. 
 
-# Developer
-Kourtney McCullough
 
-## Purpose of project
-The purpose of this assignment was to use the GIPHY API to make a dynamic web page that populates with gifs of our choice. I had to call the GIPHY API and use JavaScript and jQuery to change the HTML of my site.
+# What is Gif?
+Gif of Cars is a small web application that allows users to view gif images of various cars by clicking a button labeled with the car make of  their interest. The app also allows users to dynamically add buttons by inputing cars that are not listed, and then making a selection. Users can click on the image to make still and click again to return image back to motion.
+
+# Technologies 
+
+ - jQuery
+ - HTML
+ - CSS
+ - Bootstrap
+ - Giphy Developers API
+
+ # Demo
+ [Click here to view the demo](https://drive.google.com/file/d/1FBGcGiVfkee_D4Dt4ExWu-i8Zp6vMYBw/view)
+
+# Skills Learned
+
+ - Ajax call is made to Giphy API using jQuey 
+ - Passing parameters 
+ - Dynamically add buttons from an Array by looping
+ - Push (add) text to an array
+ -  Dot Notation to target specific properties of an onject
+ - Dynamically display images in web application 
+
+## Screen Shots
+
 
 
 ## Project source can be downloaded from 
