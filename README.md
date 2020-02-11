@@ -12,8 +12,11 @@ Gif of Cars is a small web application that allows users to view gif images of v
  - Bootstrap
  - Giphy Developers API
 
- # Demo
- [Click here to view the demo](https://drive.google.com/file/d/1FBGcGiVfkee_D4Dt4ExWu-i8Zp6vMYBw/view)
+# Live Demo
+  [Click here for Live demo ](https://legendary85.github.io/gifTastic_cars/)
+
+# Video Demo
+ [Click here to view video demo](https://drive.google.com/file/d/1FBGcGiVfkee_D4Dt4ExWu-i8Zp6vMYBw/view)
 
 # Skills Learned
 
